@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: assignment4minikube
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: assignment4minikube
+  template:
+    metadata:
+      labels:
+        app: assignment4minikube
+    spec:
+      containers:
+        - name: assignment4minikube
+          image: assignment4minikube:latest
+          ports:
+            - containerPort: 80
